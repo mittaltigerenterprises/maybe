@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   scan_ruby:
@@ -91,7 +91,7 @@ jobs:
         run: |
           bin/rails db:create
           bin/rails db:schema:load
-          bin/rails test
+          bin/rails test:all
           bin/rails db:seed
 
       - name: Keep screenshots from failed system tests
